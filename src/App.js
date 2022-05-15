@@ -1,5 +1,7 @@
-import ExpenseItem from "./components/ExpenseItem";
+import React from "react";
 
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 //special thing about this function is that ir returns jsx code...is a function and custom html element. This is a component and a component must return something that can be rendered in the browser
 //"state" is built into react and lets us change the state of an application
 function App() {
@@ -28,27 +30,8 @@ function App() {
 
   return (
     <div>
-      <h1>Lets get Started</h1>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[2].title}
-        amount={expenses[2].amount}
-        date={expenses[2].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[3].title}
-        amount={expenses[3].amount}
-        date={expenses[3].date}
-      ></ExpenseItem>
+      <NewExpense />
+      <Expenses items= {expenses}></Expenses>
     </div>
   );
 }
